@@ -1,0 +1,14 @@
+C:\Users\Manuela\Desktop\C#\Testproject\bin\Debug\net10.0\Testproject.exe
+C:\Users\Manuela\Desktop\C#\Testproject\bin\Debug\net10.0\Testproject.deps.json
+C:\Users\Manuela\Desktop\C#\Testproject\bin\Debug\net10.0\Testproject.runtimeconfig.json
+C:\Users\Manuela\Desktop\C#\Testproject\bin\Debug\net10.0\Testproject.dll
+C:\Users\Manuela\Desktop\C#\Testproject\bin\Debug\net10.0\Testproject.pdb
+C:\Users\Manuela\Desktop\C#\Testproject\obj\Debug\net10.0\Testproject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Manuela\Desktop\C#\Testproject\obj\Debug\net10.0\Testproject.AssemblyInfoInputs.cache
+C:\Users\Manuela\Desktop\C#\Testproject\obj\Debug\net10.0\Testproject.AssemblyInfo.cs
+C:\Users\Manuela\Desktop\C#\Testproject\obj\Debug\net10.0\Testproject.csproj.CoreCompileInputs.cache
+C:\Users\Manuela\Desktop\C#\Testproject\obj\Debug\net10.0\Testproject.dll
+C:\Users\Manuela\Desktop\C#\Testproject\obj\Debug\net10.0\refint\Testproject.dll
+C:\Users\Manuela\Desktop\C#\Testproject\obj\Debug\net10.0\Testproject.pdb
+C:\Users\Manuela\Desktop\C#\Testproject\obj\Debug\net10.0\Testproject.genruntimeconfig.cache
+C:\Users\Manuela\Desktop\C#\Testproject\obj\Debug\net10.0\ref\Testproject.dll
