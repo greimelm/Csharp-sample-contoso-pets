@@ -12,3 +12,4 @@ C:\Users\Manuela\Desktop\C#\Testproject\obj\Debug\net10.0\refint\Testproject.dll
 C:\Users\Manuela\Desktop\C#\Testproject\obj\Debug\net10.0\Testproject.pdb
 C:\Users\Manuela\Desktop\C#\Testproject\obj\Debug\net10.0\Testproject.genruntimeconfig.cache
 C:\Users\Manuela\Desktop\C#\Testproject\obj\Debug\net10.0\ref\Testproject.dll
+C:\Users\Manuela\Desktop\C#\Testproject\obj\Debug\net10.0\Testproject.sourcelink.json
