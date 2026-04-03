@@ -377,7 +377,22 @@ do
 
         case "5":
             // Edit an animal’s age");
-            Console.WriteLine("UNDER CONSTRUCTION - please check back next month to see progress.");
+            Console.WriteLine("Please select the animal to edit its age:");
+            for (int i = 0; i < maxPets; i++)
+            {
+                if (ourAnimals[i, 0] != "ID #: ")
+                {
+                    Console.WriteLine();
+                    //leaving out physical and personality description
+                    for (int j = 0; j < 4; j++)
+                    {
+                        Console.WriteLine(ourAnimals[i, j].ToString());
+                    }
+                }
+            }
+            // execute selection
+            // overwrite array
+            // condition for do-while/while 
             Console.WriteLine("Press the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
