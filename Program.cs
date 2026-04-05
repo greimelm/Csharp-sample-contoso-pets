@@ -318,8 +318,9 @@ do
                             if (readResult != null)
                             {
                                 readResult = readResult.Trim();
-                                if (readResult.Length > 0) {
-                                ourAnimals[i, 4] = "Physical description: " + readResult;
+                                if (readResult.Length > 0)
+                                {
+                                    ourAnimals[i, 4] = "Physical description: " + readResult;
                                 }
                             }
                         } while (ourAnimals[i, 4] == "Physical description: ");
@@ -342,31 +343,33 @@ do
                     {
                         do
                         {
-                        Console.WriteLine($"Enter a nickname for {ourAnimals[i, 0]}");
-                        readResult = Console.ReadLine();
-                        if (readResult != null)
+                            Console.WriteLine($"Enter a nickname for {ourAnimals[i, 0]}");
+                            readResult = Console.ReadLine();
+                            if (readResult != null)
                             {
                                 readResult = readResult.Trim();
-                                if (readResult.Length > 0) {
-                                ourAnimals[i, 3] = "Nickname: " + readResult;
+                                if (readResult.Length > 0)
+                                {
+                                    ourAnimals[i, 3] = "Nickname: " + readResult;
                                 }
                             }
-                        } while (ourAnimals[i, 3] =="Nickname: ");
+                        } while (ourAnimals[i, 3] == "Nickname: ");
                     }
                     if (ourAnimals[i, 5] == "Personality: ")
                     {
                         do
                         {
-                        Console.WriteLine($"Enter a personality description for {ourAnimals[i, 0]} (likes or dislikes, tricks, energy level)");
-                        readResult = Console.ReadLine();
-                        if (readResult != null)
+                            Console.WriteLine($"Enter a personality description for {ourAnimals[i, 0]} (likes or dislikes, tricks, energy level)");
+                            readResult = Console.ReadLine();
+                            if (readResult != null)
                             {
                                 readResult = readResult.Trim();
-                                if (readResult.Length > 0) {
-                                ourAnimals[i, 5] = "Personality: " + readResult;
+                                if (readResult.Length > 0)
+                                {
+                                    ourAnimals[i, 5] = "Personality: " + readResult;
                                 }
                             }
-                        } while (ourAnimals[i, 5] =="Personality: ");
+                        } while (ourAnimals[i, 5] == "Personality: ");
                     }
                 }
             }
@@ -376,7 +379,8 @@ do
             break;
 
         case "5":
-            // Edit an animal’s age");
+            // Edit an animal’s age;
+            bool ageChanged = false;
             Console.WriteLine("Please select the animal to edit its age:");
             for (int i = 0; i < maxPets; i++)
             {
@@ -390,9 +394,42 @@ do
                     }
                 }
             }
-            // execute selection
-            // overwrite array
-            // condition for do-while/while 
+            string currentAge = "";
+            string currentNick = "";
+            string? secondReadResult;
+            do
+            {
+                Console.WriteLine("Please enter the animal's ID:");
+                readResult = Console.ReadLine();
+                if (readResult != null && readResult.Length > 0)
+                {
+                    for (int i = 0; i < maxPets; i++)
+                    {
+                        if (ourAnimals[i, 0] != "ID #: ")
+                        {
+                            string subID = ourAnimals[i, 0].ToLower().Substring(6);
+                            if (subID.Contains(readResult.ToLower()))
+                            {
+                                currentAge = ourAnimals[i, 2];
+                                currentNick = ourAnimals[i, 3];
+                                Console.WriteLine($"The current age supplied for {currentNick} is {currentAge}.");
+                                Console.WriteLine($"Please enter the new age for {currentNick} in years:");
+                                secondReadResult = Console.ReadLine();
+                                if (secondReadResult != null)
+                                {
+                                    bool isNumber = int.TryParse(secondReadResult, out int newAge);
+                                    if (isNumber)
+                                    {
+                                        ourAnimals[i, 2] = "Age: " + newAge.ToString();
+                                        Console.WriteLine($"{currentNick}'s age successfully changed to {newAge}!");
+                                        ageChanged = true;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } while (ageChanged == false);
             Console.WriteLine("Press the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
