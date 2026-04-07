@@ -436,7 +436,59 @@ do
 
         case "6":
             // Edit an animal’s personality description");
-            Console.WriteLine("UNDER CONSTRUCTION - please check back next month to see progress.");
+            bool personalityChanged = false;
+            Console.WriteLine("Please select the animal to edit its personality:");
+            for (int i = 0; i < maxPets; i++)
+            {
+                if (ourAnimals[i, 0] != "ID #: ")
+                {
+                    if (ourAnimals[i, 0] != "ID #: ")
+                    {
+                        // providing id, nickname, personality
+                        Console.WriteLine();
+                        Console.WriteLine(ourAnimals[i, 0]);
+                        Console.WriteLine(ourAnimals[i, 3]);
+                        Console.WriteLine(ourAnimals[i, 5]);
+                    }
+                }
+            }
+            string currentDescr = "";
+            string currentName = "";
+            string? readNewDescr;
+            do
+            {
+                Console.WriteLine("Please enter the animal's ID:");
+                readResult = Console.ReadLine();
+                if (readResult != null && readResult.Length > 0)
+                {
+                    for (int i = 0; i < maxPets; i++)
+                    {
+                        if (ourAnimals[i, 0] != "ID #: ")
+                        {
+                            string subID = ourAnimals[i, 0].ToLower().Substring(6);
+                            if (subID.Contains(readResult.ToLower()))
+                            {
+                                currentAge = ourAnimals[i, 2];
+                                currentNick = ourAnimals[i, 3];
+                                Console.WriteLine($"The current age supplied for {currentNick} is {currentAge}.");
+                                Console.WriteLine($"Please enter the new age for {currentNick} in years:");
+                                secondReadResult = Console.ReadLine();
+                                if (secondReadResult != null)
+                                {
+                                    bool isNumber = int.TryParse(secondReadResult, out int newAge);
+                                    if (isNumber)
+                                    {
+                                        ourAnimals[i, 2] = "Age: " + newAge.ToString();
+                                        Console.WriteLine($"{currentNick}'s age successfully changed to {newAge}!");
+                                        ageChanged = true;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } while (personalityChanged == false);
+
             Console.WriteLine("Press the Enter key to continue.");
             readResult = Console.ReadLine();
             break;
