@@ -468,20 +468,19 @@ do
                             string subID = ourAnimals[i, 0].ToLower().Substring(6);
                             if (subID.Contains(readResult.ToLower()))
                             {
-                                currentAge = ourAnimals[i, 2];
-                                currentNick = ourAnimals[i, 3];
-                                Console.WriteLine($"The current age supplied for {currentNick} is {currentAge}.");
-                                Console.WriteLine($"Please enter the new age for {currentNick} in years:");
-                                secondReadResult = Console.ReadLine();
-                                if (secondReadResult != null)
+                                // TODO check if name and description are empty
+                                currentDescr = ourAnimals[i, 5];
+                                currentName = ourAnimals[i, 3];
+                                Console.WriteLine($"The current personality description supplied for {currentName} is {currentDescr}.");
+                                Console.WriteLine($"Please enter the new personality description for {currentName}:");
+                                readNewDescr = Console.ReadLine();
+                                if (readNewDescr != null && readNewDescr.Length > 0)
                                 {
-                                    bool isNumber = int.TryParse(secondReadResult, out int newAge);
-                                    if (isNumber)
-                                    {
-                                        ourAnimals[i, 2] = "Age: " + newAge.ToString();
-                                        Console.WriteLine($"{currentNick}'s age successfully changed to {newAge}!");
-                                        ageChanged = true;
-                                    }
+                                    // TODO: input cleanup
+                                    ourAnimals[i, 5] = "Physical description: " + readNewDescr;
+
+                                    Console.WriteLine($"{currentName}'s personality description successfully changed to {readNewDescr}!");
+                                    personalityChanged = true;
                                 }
                             }
                         }
