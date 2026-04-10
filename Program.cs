@@ -468,11 +468,25 @@ do
                             string subID = ourAnimals[i, 0].ToLower().Substring(6);
                             if (subID.Contains(readResult.ToLower()))
                             {
-                                // TODO check if name and description are empty
                                 currentDescr = ourAnimals[i, 5];
                                 currentName = ourAnimals[i, 3];
-                                Console.WriteLine($"The current personality description supplied for {currentName} is {currentDescr}.");
-                                Console.WriteLine($"Please enter the new personality description for {currentName}:");
+                                if (currentName.Length < 11)
+                                {
+                                    // TODO add this menue point
+                                    Console.WriteLine($"There is currently no nickname supplied for the animal with the id {ourAnimals[i, 0]}.\nPlease provide a nickname beforehand.");
+                                    // personalityChanged = true;
+                                    continue;
+                                }
+                                else if (currentDescr.Length < 15)
+                                {
+                                    Console.WriteLine($"The current personality description supplied for {currentName} is empty.");
+                                    Console.WriteLine($"Please enter the new personality description for {currentName}:");
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"The current personality description supplied for {currentName} is {currentDescr}.");
+                                    Console.WriteLine($"Please enter the new personality description for {currentName}:");
+                                }
                                 readNewDescr = Console.ReadLine();
                                 if (readNewDescr != null && readNewDescr.Length > 0)
                                 {
