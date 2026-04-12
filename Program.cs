@@ -18,6 +18,8 @@ string anotherPet = "y";
 bool validEntry = false;
 int petAge = 0;
 
+int maxLength = 50;
+
 // array used to store runtime data, there is no persisted data
 string[,] ourAnimals = new string[maxPets, 6];
 
@@ -475,7 +477,7 @@ do
                                     // TODO add this menue point
                                     Console.WriteLine($"There is currently no nickname supplied for the animal with the id {ourAnimals[i, 0]}.\nPlease provide a nickname beforehand.");
                                     // personalityChanged = true;
-                                    continue;
+                                    break;
                                 }
                                 else if (currentDescr.Length < 15)
                                 {
@@ -490,7 +492,11 @@ do
                                 readNewDescr = Console.ReadLine();
                                 if (readNewDescr != null && readNewDescr.Length > 0)
                                 {
-                                    // TODO: input cleanup
+                                    readNewDescr = readNewDescr.Trim();
+                                    if (readNewDescr.Length >= maxLength)
+                                    {
+                                        readNewDescr = readNewDescr.Substring(0, maxLength);
+                                    }
                                     ourAnimals[i, 5] = "Physical description: " + readNewDescr;
 
                                     Console.WriteLine($"{currentName}'s personality description successfully changed to {readNewDescr}!");
